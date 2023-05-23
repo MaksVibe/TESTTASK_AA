@@ -1,0 +1,13 @@
+.user__wrapper {
+  min-height: 254px;
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+.user__photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}

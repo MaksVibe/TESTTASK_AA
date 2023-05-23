@@ -1,0 +1,18 @@
+.button {
+  width: 100%;
+  max-width: 100px;
+  padding: 4px 0;
+
+  border-radius: 80px;
+  color: var(--primary-font-color);
+  background-color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--hover-btn-bg-color);
+  }
+
+  &:disabled {
+    color: var(--third-font-color);
+    background-color: var(--disabled-btn-bg-color);
+  }
+}
