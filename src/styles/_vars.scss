@@ -1,6 +1,4 @@
 :root {
-  --body-font: 400 (16px / calc(26 / 16)) "Nunito", sans-serif;
-  --heading-font: 400 40px/1 "Nunito", sans-serif;
   --white-color: #ffffff;
   --black-color: #000000;
   --primary-color: #f4e041;
@@ -8,7 +6,8 @@
   --primary-font-color: rgba(0, 0, 0, 0.87);
   --secondary-font-color: #7e7e7e;
   --third-font-color: rgba(255, 255, 255, 0.87);
-  --bg-color: #f8f8f8;
+  --primary-bg-color: #f8f8f8;
+  --secondary-bg-color: #161616;
   --hover-btn-bg-color: #ffe302;
   --disabled-btn-bg-color: #b4b4b4;
   --secondary-border-color: #d0cfcf;
