@@ -1,0 +1,34 @@
+.header__block {
+  width: 100%;
+  height: 60px;
+  background-color: #161616;
+}
+
+.header {
+  background-color: var(--white-color);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 13px 16px;
+
+    @media screen and (min-width: 1202px) {
+      padding: 13px 0;
+    }
+  }
+}
+
+.logo {
+  max-height: 26px;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 210px;
+}
