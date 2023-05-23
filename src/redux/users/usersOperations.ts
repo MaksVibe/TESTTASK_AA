@@ -19,9 +19,6 @@ export const nextUsers: any = createAsyncThunk(
   "nextUsers",
   async (url, thunkAPI) => {
     try {
-      // const state: any = thunkAPI.getState();
-      // const url = state?.users?.nextUrl;
-
       const data = await getUsersApi(url);
 
       return data;
