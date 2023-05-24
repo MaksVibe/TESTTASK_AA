@@ -12,15 +12,21 @@ const token = {
 };
 
 export async function getToken() {
+  token.unset();
   const data = await axios.get("api/v1/token").then(res => res.data);
+  token.set(data.token);
   return data.token;
 }
 
 export async function getUsersApi(url?: any) {
-  token.set(getToken());
+  getToken();
   const data = await axios.get(
     url ? url.replace(baseUrl, "") : `api/v1/users?page=1&count=6`
   );
 
   return data.data;
+}
+
+export async function createUserApi(user: any) {
+  await axios.post("api/v1/users", user);
 }
