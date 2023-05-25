@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../../components/Button/Button";
+import Loader from "../../components/Loader/Loader";
 import Title from "../../components/Title/Title";
 import { createUser } from "../../redux/users/usersOperations";
-import { getUserCreated } from "../../redux/users/usersSelector";
+import { getIsLoading, getUserCreated } from "../../redux/users/usersSelector";
 import "./SignUpForm.scss";
 
 const regexEmail =
@@ -22,6 +23,7 @@ const SignUpForm = () => {
   const [errorFile, setErrorFile] = useState<boolean>(false);
 
   const userCreated = useSelector(getUserCreated);
+  const isLoading = useSelector(getIsLoading);
   const dispatch = useDispatch();
 
   const user = {
@@ -89,7 +91,6 @@ const SignUpForm = () => {
 
   const handleFileUpload = (e: any) => {
     setErrorFile(false);
-    console.log("Files", e.target.files);
     if (e.target.files[0].size > 5242880) {
       alert("File is too big!");
       setErrorFile(true);
@@ -270,6 +271,8 @@ const SignUpForm = () => {
             </p>
           )}
         </div>
+
+        {isLoading && <Loader />}
         {userCreated && <p style={{ color: "green" }}>{userCreated}!</p>}
         <Button
           signUp
