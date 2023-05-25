@@ -1,0 +1,126 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.form {
+  width: 100%;
+  max-width: 380px;
+
+  &__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &:nth-child(-n + 2) {
+      margin-bottom: 50px;
+    }
+
+    &--label {
+      position: absolute;
+      top: -7px;
+      left: 14px;
+      padding: 0 4px;
+
+      font-weight: 500;
+      font-size: 12px;
+      line-height: calc(14 / 12);
+      color: var(--secondary-font-color);
+      background-color: var(--primary-bg-color);
+    }
+
+    &--field {
+      padding: 14px 16px;
+      border: 1px solid var(--secondary-border-color);
+      border-radius: 4px;
+      background-color: inherit;
+
+      &::placeholder {
+        color: var(--secondary-font-color);
+      }
+    }
+
+    &--radio {
+      &::before {
+        width: 20px;
+        height: 20px;
+        top: -4px;
+        left: -4px;
+        border-radius: 50%;
+        position: relative;
+        background-color: var(--white-color);
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid var(--secondary-border-color);
+      }
+      &:checked::before {
+        width: 20px;
+        height: 20px;
+        top: -4px;
+        left: -4px;
+        border-radius: 50%;
+        position: relative;
+        background-color: var(--white-color);
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid var(--secondary-color);
+      }
+      &:checked::after {
+        width: 10px;
+        height: 10px;
+        top: -25px;
+        left: 2px;
+        border-radius: 50%;
+        position: relative;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        background-color: var(--secondary-color);
+      }
+    }
+  }
+
+  &__selection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+
+    margin-top: 43px;
+    margin-bottom: 47px;
+  }
+
+  &__upload {
+    padding: 14px 15px;
+    border: 1px solid var(--primary-font-color);
+    border-radius: 4px 0px 0px 4px;
+
+    &--text {
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+
+      color: var(--secondary-font-color);
+      border: 1px solid var(--secondary-border-color);
+      border-left: none;
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+}
+
+.error__input {
+  border: 2px solid var(--error-color);
+  &[title="file"] {
+    border-left: none;
+  }
+}
+
+.error__label,
+.error__text {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  color: var(--error-color);
+}
