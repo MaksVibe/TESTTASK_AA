@@ -181,7 +181,7 @@ const SignUpForm = () => {
         </div>
         <div className="form__selection">
           <p style={{ marginBottom: "4px" }}>Select your position</p>
-          <div>
+          <div className="form__input--wrapperRadio">
             <input
               id="fd"
               type="radio"
@@ -190,11 +190,11 @@ const SignUpForm = () => {
               className="form__input--radio"
               onChange={e => handleValueChange(e)}
             />
-            <label htmlFor="fd" style={{ marginLeft: "12px" }}>
+            <label htmlFor="fd" className="form__input--radioLabel">
               Frontend developer
             </label>
           </div>
-          <div>
+          <div className="form__input--wrapperRadio">
             <input
               id="be"
               type="radio"
@@ -203,11 +203,11 @@ const SignUpForm = () => {
               className="form__input--radio"
               onChange={e => handleValueChange(e)}
             />
-            <label htmlFor="be" style={{ marginLeft: "12px" }}>
+            <label htmlFor="be" className="form__input--radioLabel">
               Backend developer
             </label>
           </div>
-          <div>
+          <div className="form__input--wrapperRadio">
             <input
               id="des"
               type="radio"
@@ -216,11 +216,11 @@ const SignUpForm = () => {
               className="form__input--radio"
               onChange={e => handleValueChange(e)}
             />
-            <label htmlFor="des" style={{ marginLeft: "12px" }}>
+            <label htmlFor="des" className="form__input--radioLabel">
               Designer
             </label>
           </div>
-          <div>
+          <div className="form__input--wrapperRadio">
             <input
               id="qa"
               type="radio"
@@ -229,7 +229,7 @@ const SignUpForm = () => {
               className="form__input--radio"
               onChange={e => handleValueChange(e)}
             />
-            <label htmlFor="qa" style={{ marginLeft: "12px" }}>
+            <label htmlFor="qa" className="form__input--radioLabel">
               QA
             </label>
           </div>
