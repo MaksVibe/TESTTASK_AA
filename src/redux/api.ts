@@ -12,14 +12,13 @@ const token = {
 };
 
 export async function getToken() {
-  token.unset();
   const data = await axios.get("api/v1/token").then(res => res.data);
-  token.set(data.token);
   return data.token;
 }
 
 export async function getUsersApi(url?: any) {
-  getToken();
+  token.unset();
+  token.set(getToken());
   const data = await axios.get(
     url ? url.replace(baseUrl, "") : `api/v1/users?page=1&count=6`
   );
@@ -28,5 +27,19 @@ export async function getUsersApi(url?: any) {
 }
 
 export async function createUserApi(user: any) {
-  await axios.post("api/v1/users", user);
+  const token = await getToken();
+  let formData = new FormData();
+  formData.append("position_id", user.position_id);
+  formData.append("name", user.name);
+  formData.append("email", user.email);
+  formData.append("phone", user.phone);
+  formData.append("photo", user.photo);
+
+  const data = await axios.post("api/v1/users", formData, {
+    headers: {
+      Token: token,
+      "content-type": "multipart/form-data",
+    },
+  });
+  return data;
 }

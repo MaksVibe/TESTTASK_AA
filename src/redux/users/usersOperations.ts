@@ -1,6 +1,5 @@
-/* eslint-disable no-unreachable */
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getUsersApi } from "../api";
+import { getUsersApi, createUserApi } from "../api";
 
 export const fetchUsers: any = createAsyncThunk(
   "getUsers",
@@ -24,6 +23,21 @@ export const nextUsers: any = createAsyncThunk(
       return data;
     } catch ({ message }) {
       return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const createUser: any = createAsyncThunk(
+  "createUser",
+  async (user: any, thunkAPI) => {
+    try {
+      const data: any = await createUserApi(user);
+      const users = await getUsersApi();
+
+      return { data: data.data, users };
+    } catch ({ message }) {
+      const users = await getUsersApi();
+      return { message: thunkAPI.rejectWithValue(message), users };
     }
   }
 );
