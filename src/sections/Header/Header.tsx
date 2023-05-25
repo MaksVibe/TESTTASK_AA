@@ -9,7 +9,9 @@ const Header: React.FC = () => {
       <div className="header__block"></div>
       <header className="header">
         <div className="header__wrapper">
-          <img src={logo} alt="Logo Testtask" className="logo" />
+          <a href="/" style={{ display: "flex" }}>
+            <img src={logo} alt="Logo Testtask" className="logo" />
+          </a>
           <div className="buttonWrapper">
             <Button users />
             <Button signUp />
